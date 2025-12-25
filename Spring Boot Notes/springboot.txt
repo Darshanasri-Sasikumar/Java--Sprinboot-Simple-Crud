@@ -1,0 +1,135 @@
+Spring Boot:
+--------------
+        Spring boot is an Frame Work for Java that is build on top of Spring that simplifies Application Development
+        It Supports
+                ->web Application
+                ->Rest Api's
+                ->microservices
+                ->security
+                ->and for cloud Deployment
+
+
+why Sprint boot?
+            ->Fast Development
+            ->Auto-configuration
+            ->microservices friendly
+            ->Seamless Integration
+
+Features of SprintBoot:
+-----------------------
+                ->Auto-Configuration: Automatically configures components (like Hibernate, JPA) based on dependencies. 
+                ->Easy Maintenance and Creation of REST Endpoints: With annotations like @RestController, @GetMapping and @PostMapping, creating REST endpoints is straightforward.
+
+
+Annotations Explanation:
+
+1.Core Basic Annotation:
+
+@SpringBootApplication:
+----------------------
+                  ->Main Entry Point of Spring Boot
+                  ->example:
+                  @SpringBootApplication
+                              public class DemoApplication {
+                                          public static void main(String[] args) {
+                                          SpringApplication.run(DemoApplication.class, args);
+                                                 }
+                                          }
+
+@Component
+----------
+                  -It tells spring This is a class manage it for manage
+                  @Component
+                  public class EmailService {}
+
+                        
+@Autowired
+----------
+
+      ->  @autowired:@Autowired is used to automatically connect (inject) one class into another in Spring Boot.
+      ->  we usually connect Repository / service to the controller
+
+            example:
+              @Autowired
+             private bookrepo bookRepo;
+
+@Bean:
+-----
+      ->it is used to create Object Manually and gives it to Spring
+      @Bean
+            public ModelMapper modelMapper()
+            {
+                  return new ModelMapper();
+            }
+        
+
+2.Steriotype Annotation:
+
+@controller
+------------
+            ->handels web pages 
+                @Controller
+                public class PageController {
+                }
+
+@service
+---------
+            ->it Holds Business logics
+
+
+@Reposiory
+----------
+            ->it is a database Layer
+
+
+3.Request Mappinng Annotations 
+
+
+
+@RequestMapping:
+-----------------
+                  @RequestMapping("/book")->sets the base url for controller
+
+@GetMapping:
+-------------  
+                  its a get Request
+
+@PostMapping
+-------------
+                  post method is used to create data
+
+@PutMapping
+------------
+                  update method is used
+
+@DeleteMapping 
+                  It is used to delete data  
+
+
+4. Request Data Annotations
+
+@RequestBody:
+-------------
+            -> JSON body
+
+@Id:
+----
+      mark it as primary key
+
+Syntax: @GenerateValue(starategy = GenerationType.IDENTITY)
+
+@GenerateValue:
+---------------
+            it says generate value automatically
+
+(strategy = GenerationType.IDENTITY)
+----------------------------------------
+                  it tells how to generate it
+
+🔹 What does GenerationType.IDENTITY mean?
+
+      1.IDENTITY → Database auto-increments the ID field.
+      2.Each new record gets a unique number automatically.
+      3.You do not have to provide the ID in your JSON.
+
+
